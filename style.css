@@ -1,25 +1,21 @@
-body{
-   font-family: "Inter Tight", sans-serif;
-   font-weight: 290;
-   padding: 3rem;
-    color: rgb(80, 80, 80)
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap');
 
-h1{
-    font-family: "DM Sans", sans-serif;
+body { font-family: 'Inter', sans-serif;}
+
+.inter-semibold{
+    font-family: "Inter", sans-serif;
+    font-size: 3rem;
     font-weight: 500;
-    color: rgb(232, 40, 152);
-    font-size: 4rem;
-    margin-bottom: -100px;
-    margin-left: 260px;
+    font-style: normal;
 }
 
-h2{
-    text-align: right;
-    color: rgb(63, 200, 39);
-    font-size: 4rem;
-    margin-right: 250px;
-    margin-top: -100px;
+.noto-nastaliq-urdu{
+   font-family: "Noto Nastaliq Urdu", serif; 
+   font-size: 3rem;
+   -webkit-text-stroke-width: 2px; 
+   -webkit-text-stroke-color: blue; 
+        color: transparent;
 }
 
 em{
@@ -61,3 +57,7 @@ footer{
     font-size: small;
 }
 *:not(:first-child) {margin-block-start: 1rem;}
+
+blockquote + p {
+    margin-block-start: 1em;
+}
