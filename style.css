@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&family=Varela+Round&display=swap');
 
 body{ 
     font-family: 'Inter', sans-serif;
     font-weight: 200;
+    color: white;
+    background-color: black;
 }
 
 h1{ 
@@ -15,8 +18,8 @@ h2{
 }
 
 section{ 
-    background-color: blue;
     line-height: 7em;
+    background: blue;
     padding: 4em;
 }
 
@@ -27,7 +30,8 @@ section{
     font-style: normal;
     letter-spacing: -0.05em;
     color: white;
-    z-index: -1;
+    position: relative;
+    z-index: 1;
 }
 
 .noto-nastaliq-urdu{
@@ -48,6 +52,12 @@ section{
     bottom: 0.5em;
 }
 
+.noto-sans-arabic{
+    font-family: "Noto Sans Arabic", sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    color: rgb(34, 34, 34);
+}
 
 em{
     font-style: italic;
