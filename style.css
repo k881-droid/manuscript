@@ -1,22 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap');
 
-body { font-family: 'Inter', sans-serif;}
+body{ 
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+h1{ 
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+section{ 
+    background-color: blue;
+    line-height: 7em;
+    padding: 4em;
+}
 
 .inter-semibold{
     font-family: "Inter", sans-serif;
-    font-size: 3rem;
+    font-size: 6.5rem;
     font-weight: 500;
     font-style: normal;
+    letter-spacing: -0.05em;
+    color: white;
+    z-index: -1;
 }
 
 .noto-nastaliq-urdu{
    font-family: "Noto Nastaliq Urdu", serif; 
-   font-size: 3rem;
-   -webkit-text-stroke-width: 2px; 
-   -webkit-text-stroke-color: blue; 
-        color: transparent;
+   font-size: 6.5rem;
+   color: blue;
+    -webkit-text-stroke: 0.1rem white; /* Chrome, Edge, Safari */
+    position:relative;
+    top: 0.1em;
 }
+
+.noto-nastaliq-urdu-second-child{
+    font-family: "Noto Nastaliq Urdu", serif; 
+    font-size: 6.5rem;
+    color: blue;
+    -webkit-text-stroke: 0.1rem white; /* Chrome, Edge, Safari */
+    position: relative;
+    bottom: 0.5em;
+}
+
 
 em{
     font-style: italic;
