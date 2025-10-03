@@ -124,7 +124,7 @@ header > section:nth-child(3) h3 {
 .his-answers-urdu {
   font-family: "Noto Nastaliq Urdu", serif; 
   font-size: 3.5em;
-  color: yellow;
+  color: rgb(255, 255, 60);
   position: relative;   
   z-index: 2;           
   margin: 0;            
@@ -158,7 +158,7 @@ article{
     font-weight: 500;
     font-style: normal;
     letter-spacing: -0.05em;
-    color: rgb(46, 46, 241);
+    color: rgb(166, 166, 38);
     position: absolute;
 }
 
@@ -167,7 +167,7 @@ article{
     font-weight: 400;
     font-style: normal;
     font-size: 3.5rem;
-    color: #DFD800;
+    color: rgb(166, 166, 38);
     position: relative;
     z-index: -1;
     top: 60%;
