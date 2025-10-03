@@ -5,6 +5,14 @@
 		<link href="reset.css" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
 	</head>
+	<script>
+    document.getElementById("scrollTrigger").addEventListener("click", function () {
+      document.getElementById("scrollTarget").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  </script>
 	<body>
 		<header>
 		<section>
@@ -57,7 +65,7 @@
     			<div class="col col-en">
       				<p>Consider firstly the Modernist dogma. In 2019 while teaching a graphic design course at UCLA, book publisher Lars Müller often told his students that as designers we must be “above our audience.” Using language familiar to Modernism, Müller was not shy in his convictions towards “educating the masses.”</p>
       				<p>This call towards modernization however extends beyond simply lifestyle choice. With other art movements against its backdrop (i.e. Dadaism, Constructivism), Modernists eventually absorbed many of them into a repackaged brand known historically as the Bauhaus. And as with any branding project, the margins which did not serve its brand were stripped from its significance, flattening a character into the Bauhaus. This colonization of cultural movements and ideas was nothing contradictory to Modernist ideology but in fact essential to its practice.</p>
-      				<p>Consider sentiments many Modernists were vocal about. The Italian graphic designer Massimo Vignelli often is cited as defending the practice of using only four typefaces and disparaging “visual pollution.” Whether Vignelli realized his eugenics-adjacent language or not, his belief in the designer’s fight “against the ugliness” further cemented Modernist practice of erasure and consolidation.</p>
+      				<p><p id="scrollTrigger"></p>Consider sentiments many Modernists were vocal about. The Italian graphic designer Massimo Vignelli often is cited as defending the practice of using only four typefaces and disparaging “visual pollution.” Whether Vignelli realized his eugenics-adjacent language or not, his belief in the designer’s fight “against the ugliness” further cemented Modernist practice of erasure and consolidation.</p>
       				<p>To view a certain collection of typefaces as the essential tool kit for typography immediately excludes billions of people as mentioned. Furthermore, should anyone outside of Europe need to use Latin characters, it is thanks to the complicated history of Western imperialism and the violent destruction of indigenous cultures. This history is endemic to Modernism and canonized itself into the popularly known institution as the International Style.</p>
    				 </div>
 
@@ -101,7 +109,7 @@
 			<section class="my-response">
 			<h4 class="my-response-headings">
 		
-			<p>From my perspective as a <strong>South Asian, non-white, female designer,</strong> Buzon’s article offers a refreshing counterpoint to the eurocentric frameworks that dominate design today. In particular, I find his description of ‘design thinking’ as a “form of colonialism” quite fascinating. Tracing the roots of this now-popular design ideology, he exposes the vernacular of its founders, highlighting it as <strong>otherising</strong> and <strong>racist</strong>. A personal favorite example is that of graphic designer Vignelli, <span id="reference">who warned against creating <em>visual pollution</em> at the hands of using 'too many typefaces'. </span>
+			<p>From my perspective as a <strong>South Asian, non-white, female designer,</strong> Buzon’s article offers a refreshing counterpoint to the eurocentric frameworks that dominate design today. In particular, I find his description of ‘design thinking’ as a “form of colonialism” quite fascinating. Tracing the roots of this now-popular design ideology, he exposes the vernacular of its founders, highlighting it as <strong>otherising</strong> and <strong>racist</strong>. A personal favorite example is that of graphic designer Vignelli, who warned against creating <em>visual pollution</em> at the hands of using <p id="scrollTarget"></p>'too many typefaces'.
 			</p>
 			
 			<p>It is interesting to see how euro-centric language seeps its way into visual forms as well (in this case, the neglect of indigenous scripts). <em>[see: third header]</em> Another instance involves the use of the word <em>solving</em>, i.e. seeing the outside world as a 'problem' to be ‘fixed’ and ‘made better’. Other manifestations of visual colonialism arise in the form itself: just as ‘whiteness’ is deemed to be <strong>clean</strong>, <strong>progressive</strong>, and <strong>efficient</strong>, so too are ‘white’ typefaces (Helvetica, Futura, Arial and so on).
