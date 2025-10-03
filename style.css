@@ -145,37 +145,6 @@ header > section:nth-child(3) h3 {
   margin: 0;
 }
 
-article{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
-}
-
-.hidden-power-structures-english{
-    font-family: "Inter", sans-serif;
-    font-size: 3.5em;
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: -0.05em;
-    color: rgb(166, 166, 38);
-    position: absolute;
-}
-
-.hidden-power-structures-urdu{
-    font-family: "Rakkas", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 3.5rem;
-    color: rgb(166, 166, 38);
-    position: relative;
-    z-index: -1;
-    top: 60%;
-}
-    
-section p{
-    display: inline-block;
-}
 em{
     font-style: italic;
 }
@@ -184,122 +153,83 @@ footer{
     font-size: small;
 }
 
-//* — tighten the His Answers section without absolute — */
 .sticky-heading {
-  /* control the section height only with padding */
-  padding-block: 0.6rem;   /* tweak up/down to taste */
+  padding-block: 0.6rem;  
 }
 
-/* kill default h3 margins so they don't inflate the blue area */
 .sticky-heading .his-answers-urdu,
 .sticky-heading .his-answers-english {
   margin: 0;
-  line-height: 1;          /* keeps the text compact */
+  line-height: 1;
 }
 
-/* base (Urdu) stays on top visually */
 .his-answers-urdu {
   position: relative;
   z-index: 2;
 }
 
-/* overlay (English) — stay in flow, overlap via margins (not absolute) */
 .his-answers-english {
   position: relative;
   z-index: 1;
-
-  /* pull upward to overlap the Urdu and reduce section height */
-  margin-block-start: -12px;   /* move up; adjust to match your old look */
-
-  /* shift to the side logically (works LTR/RTL) */
-  margin-inline-start: 12rem;    /* move right; tweak as needed */
+  margin-block-start: -12px;  
+  margin-inline-start: 12rem;   
 }
 
-/* allow vertical + horizontal nudge for the English line */
 .sticky-heading .his-answers-english{
-  /* cancel any earlier absolute/transform just in case */
   position: relative;
   left: auto; right: auto; top: auto; bottom: auto; transform: none;
-
-  /* keep only the margins we want to control */
-  margin-inline: 0;          /* left/right = 0 */
-  margin-block-end: 0;       /* bottom = 0 */
-  margin-block-start: -1em;   /* move UP (make more/less negative to adjust) */
-  margin-inline-start: 14.5em;    /* move RIGHT; tweak as needed */
+  margin-inline: 0;         
+  margin-block-end: 0;       
+  margin-block-start: -1em;   
+  margin-inline-start: 14.5em;   
 
   z-index: 1;
 }
 
-/* optional: also zero Urdu margins here so the section height is tight */
 .sticky-heading .his-answers-urdu{
   margin: 0;
 }
 
-@media (max-width: 600px) {
+article{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+}
 
-  /* Make the hero (first blue section) reasonable on small screens */
-  header > section:nth-child(1){
-    line-height: normal;            /* avoid huge vertical gaps */
-    padding-block: 2rem;            /* was 4em; smaller on phones */
-    padding-inline: 1rem;
-  }
+.hidden-power-structures-english{
+  font-family: "Inter", sans-serif;
+  font-size: 3.5em;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: rgb(166, 166, 38);
+  position: relative;    
+  margin: 0;
+}
 
-  /* Scale big headings down responsively */
-  .inter-semibold{
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-  .noto-nastaliq-urdu,
-  .noto-nastaliq-urdu-second-child{
-    font-size: clamp(2.2rem, 9vw, 3.2rem);
-    -webkit-text-stroke-width: .1rem;
-  }
+.hidden-power-structures-urdu{
+  font-family: "Rakkas", serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+  color: rgb(166, 166, 38);
+  position: relative;
+  z-index: -1;
+  margin:0;
+  top: 60%;
+  inset-block-start: -1.2em;
+}
+    
+article p{
+    font-size: 1.5rem;
+    margin-block-start:-2em;
+    margin-inline-end:35em;
+    line-height: 1.5em;
+}
 
-  /* Sticky “His Answers” bar: keep it compact */
-  .sticky-heading{
-    padding-block: .5rem;
-    padding-inline: 1rem;
-  }
-  .his-answers-urdu{
-    font-size: clamp(1.4rem, 6vw, 2rem);
-    margin: 0;
-  }
-
-  /* On phones, drop the overlap so text stays readable */
-  .his-answers-english{
-    position: static;               /* no relative offsets on tiny screens */
-    display: block;
-    font-size: clamp(1.2rem, 5.5vw, 1.8rem);
-    margin: .25rem 0 0 0;           /* simple stacking under Urdu */
-  }
-
-  /* Fix paragraphs wrapping oddly */
-  section p{
-    display: block;                 /* inline-block can cause cramped rows */
-  }
-  p{
-    overflow-wrap: anywhere;        /* allow long words to break */
-  }
-
-  /* Prevent the “Hidden Power Structures” English heading from overlapping */
-  .hidden-power-structures-english{
-    position: static;               /* turn off absolute on phones */
-    margin: .5rem 0 0 0;
-  }
-  .hidden-power-structures-urdu{
-    top: 0;
-    z-index: auto;
-  }
-
-  /* Tables: let them scroll horizontally if too wide */
-  table{
-    display: block;
-    max-width: 100%;
-    overflow-x: auto;
-    border-collapse: collapse;
-  }
-  th, td{ padding: .5rem; }
-
-  /* Nice-to-have: global sizing makes padding behave predictably */
-  html{ box-sizing: border-box; }
-  *, *::before, *::after{ box-sizing: inherit; }
+article > .first-para-urdu{
+    font-family: "handjet", sans-serif;
+    font-size: 2em;
+    margin-inline-end: 25em;
+    margin-block-start: -36em;
+    position: relative
 }
