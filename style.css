@@ -38,7 +38,7 @@ section:nth-child(1){
    font-family: "Noto Nastaliq Urdu", serif; 
    font-size: 6.5rem;
    color: rgb(46, 46, 241);
-    -webkit-text-stroke: 0.2rem white; /* Chrome, Edge, Safari */
+    -webkit-text-stroke: 0.2rem white; 
     position:relative;
     top: 0em;
     paint-order: stroke;
@@ -48,7 +48,7 @@ section:nth-child(1){
     font-family: "Noto Nastaliq Urdu", serif; 
     font-size: 6.5rem;
     color: rgb(46, 46, 241);
-    -webkit-text-stroke: 0.2rem white; /* Chrome, Edge, Safari */
+    -webkit-text-stroke: 0.2rem white; 
     position: relative;
     bottom: 0.4em;
     paint-order: stroke;
@@ -229,53 +229,48 @@ article p{
 
 .two-col{
   display: flex;
-  flex-wrap: wrap;          /* stacks on small screens */
-  gap: 2rem;                /* space between columns */
+  gap: 2rem; 
+  justify-content: space-between;              
   align-items: flex-start;
-  margin-block-start: .75rem;   /* distance from headings */
+  margin-block-start: .75rem;  
 }
 
-/* columns sizing */
 .two-col .col{
-  flex: 1 1 28rem;          /* base width ~28rem, grows/shrinks */
-  max-inline-size: 60ch;    /* readable line length */
-}
+  flex: 1 1 28rem;
+}       
 
-/* fonts & direction per column (keeps your style) */
 .col-en{
   font-family: "Inter", sans-serif;
   direction: ltr;
 }
 .col-ur{
-  /* Handjet first, with sensible Urdu-capable fallbacks */
-  font-family: "Handjet", "Rakkas", "Noto Nastaliq Urdu", serif;
+  font-family: "Handjet", serif;
+  font-size: 2rem;
   direction: rtl;
+  line-height: 1.5;
 }
 
-/* paragraph rhythm: IDENTICAL spacing everywhere */
-:root { --para-gap: 1rem; }        /* adjust once, affects all columns */
+:root { --para-gap: 3rem; }        
 
 .two-col .col p{
-  margin: 0 0 var(--para-gap) 0;   /* space only under each paragraph */
-  line-height: 1.6;                /* base leading */
+  margin: 0 0 var(--para-gap) 0;  
+  line-height: 1.6;               
 }
 .col-ur p{
-  line-height: 2;                  /* Urdu needs more breathing room */
+  line-height: 1;  
+  font-size: 2rem;                
 }
 
-/* remove earlier hacks that fight layout (only inside two-col) */
 .two-col p{
-  white-space: normal !important;  /* stop pre-line blank-line surprises */
+  white-space: normal !important;  
   position: static !important;
   inset: auto !important;
   margin-inline: 0 !important;
   margin-block-start: 0 !important;
 }
 
-/* no extra gap after the last paragraph in each column */
 .two-col .col p:last-child{ margin-block-end: 0; }
 
-/* stack to one column on narrow screens */
 @media (max-width: 900px){
   .two-col .col{
     flex-basis: 100%;
@@ -290,6 +285,45 @@ article p{
 
 .two-col > .para-english,
 .two-col > .para-urdu{
-  flex: 0 0 calc(50% - 1rem);  /* two equal columns (gap/2 = 1rem) */
-  max-inline-size: none;       /* let them fill the half */
+  flex: 0 0 calc(50% - 1rem);  
+  max-inline-size: none;       
 }
+
+.sticky-heading-2{
+    background-color: rgb(46, 46, 241);
+    position: sticky;
+    inset-block-start: 0;   
+    z-index: 20;
+    padding: 1rem 1rem;
+}
+
+#my-questions{
+  padding-block: 1rem;
+  height: 12rem;
+}
+#my-questions .his-answers-english{
+  margin-block-start: -1.2rem;
+}
+.my-questions-english {
+  font-family: "Inter", sans-serif;
+  font-size: 3.5em;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: rgb(33, 33, 195);
+
+  position: relative;  
+  z-index: 1;
+
+  left:16em;     
+  top: -2em;          
+  margin: 0;
+}
+.my-response{
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    padding: 3rem;
+    background-color: white;
+    line-height: 1.5em;
+}
+
+strong { font-weight: 500; } 
