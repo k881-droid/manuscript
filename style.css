@@ -223,13 +223,73 @@ article p{
     font-size: 1.5rem;
     margin-block-start:-2em;
     margin-inline-end:35em;
+    margin-inline-start: 0em;
     line-height: 1.5em;
 }
 
-article > .first-para-urdu{
-    font-family: "handjet", sans-serif;
-    font-size: 2em;
-    margin-inline-end: 25em;
-    margin-block-start: -36em;
-    position: relative
+.two-col{
+  display: flex;
+  flex-wrap: wrap;          /* stacks on small screens */
+  gap: 2rem;                /* space between columns */
+  align-items: flex-start;
+  margin-block-start: .75rem;   /* distance from headings */
+}
+
+/* columns sizing */
+.two-col .col{
+  flex: 1 1 28rem;          /* base width ~28rem, grows/shrinks */
+  max-inline-size: 60ch;    /* readable line length */
+}
+
+/* fonts & direction per column (keeps your style) */
+.col-en{
+  font-family: "Inter", sans-serif;
+  direction: ltr;
+}
+.col-ur{
+  /* Handjet first, with sensible Urdu-capable fallbacks */
+  font-family: "Handjet", "Rakkas", "Noto Nastaliq Urdu", serif;
+  direction: rtl;
+}
+
+/* paragraph rhythm: IDENTICAL spacing everywhere */
+:root { --para-gap: 1rem; }        /* adjust once, affects all columns */
+
+.two-col .col p{
+  margin: 0 0 var(--para-gap) 0;   /* space only under each paragraph */
+  line-height: 1.6;                /* base leading */
+}
+.col-ur p{
+  line-height: 2;                  /* Urdu needs more breathing room */
+}
+
+/* remove earlier hacks that fight layout (only inside two-col) */
+.two-col p{
+  white-space: normal !important;  /* stop pre-line blank-line surprises */
+  position: static !important;
+  inset: auto !important;
+  margin-inline: 0 !important;
+  margin-block-start: 0 !important;
+}
+
+/* no extra gap after the last paragraph in each column */
+.two-col .col p:last-child{ margin-block-end: 0; }
+
+/* stack to one column on narrow screens */
+@media (max-width: 900px){
+  .two-col .col{
+    flex-basis: 100%;
+    max-inline-size: none;
+  }
+}
+
+.two-col{
+  display: flex;
+  gap: 2rem;
+}
+
+.two-col > .para-english,
+.two-col > .para-urdu{
+  flex: 0 0 calc(50% - 1rem);  /* two equal columns (gap/2 = 1rem) */
+  max-inline-size: none;       /* let them fill the half */
 }
