@@ -234,3 +234,72 @@ footer{
 .sticky-heading .his-answers-urdu{
   margin: 0;
 }
+
+@media (max-width: 600px) {
+
+  /* Make the hero (first blue section) reasonable on small screens */
+  header > section:nth-child(1){
+    line-height: normal;            /* avoid huge vertical gaps */
+    padding-block: 2rem;            /* was 4em; smaller on phones */
+    padding-inline: 1rem;
+  }
+
+  /* Scale big headings down responsively */
+  .inter-semibold{
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  .noto-nastaliq-urdu,
+  .noto-nastaliq-urdu-second-child{
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+    -webkit-text-stroke-width: .1rem;
+  }
+
+  /* Sticky “His Answers” bar: keep it compact */
+  .sticky-heading{
+    padding-block: .5rem;
+    padding-inline: 1rem;
+  }
+  .his-answers-urdu{
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    margin: 0;
+  }
+
+  /* On phones, drop the overlap so text stays readable */
+  .his-answers-english{
+    position: static;               /* no relative offsets on tiny screens */
+    display: block;
+    font-size: clamp(1.2rem, 5.5vw, 1.8rem);
+    margin: .25rem 0 0 0;           /* simple stacking under Urdu */
+  }
+
+  /* Fix paragraphs wrapping oddly */
+  section p{
+    display: block;                 /* inline-block can cause cramped rows */
+  }
+  p{
+    overflow-wrap: anywhere;        /* allow long words to break */
+  }
+
+  /* Prevent the “Hidden Power Structures” English heading from overlapping */
+  .hidden-power-structures-english{
+    position: static;               /* turn off absolute on phones */
+    margin: .5rem 0 0 0;
+  }
+  .hidden-power-structures-urdu{
+    top: 0;
+    z-index: auto;
+  }
+
+  /* Tables: let them scroll horizontally if too wide */
+  table{
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+  }
+  th, td{ padding: .5rem; }
+
+  /* Nice-to-have: global sizing makes padding behave predictably */
+  html{ box-sizing: border-box; }
+  *, *::before, *::after{ box-sizing: inherit; }
+}
