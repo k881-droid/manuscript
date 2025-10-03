@@ -328,3 +328,5 @@ article p{
 }
 
 strong { font-weight: 500; } 
+
+.my-response p { margin-block-start: 3rem }
