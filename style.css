@@ -74,17 +74,19 @@ header > section:nth-child(3){
   font-size: 2rem;
   font-weight: 500;
   color: var(--header-blue);
-  text-align: center;
-  margin-block-start: calc(var(--space) * -2.5);
   position: relative;
   z-index: 100;
   background-color: var(--transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: calc(var(--space) * -2.5);
 }
 
 header > section:nth-child(3) h3{
   margin: 0;
   position: relative;
-  inset-block-start: calc(var(--space) * -4.8);
+  inset-block-start: calc(var(--space) * -3.7);
 }
 
 .handjet{
@@ -254,66 +256,41 @@ strong{ font-weight: 500; }
 
   :root{ font-size: 80%; }
 
-  /* ----------------------------------
-     1) Make the WHITE Daniel Buzon section smaller
-     (shrink the section itself + make it scrollable)
-  ---------------------------------- */
   header > section:nth-child(2){
     padding: 0.75rem 1rem;
-    max-block-size: 10rem;     /* smaller white box height */
-    overflow: auto;            /* keeps text, but inside a smaller box */
+    max-block-size: 10rem;     
+    overflow: auto;            
   }
 
   header > section:nth-child(2) .handjet{
-    font-size: 1.05em;
+    font-size: 1.5rem;
     line-height: 1.25;
     margin: 0;
   }
 
-  /* keep “In Conversation…” label tighter */
-  header > section:nth-child(3){
-    font-size: 1.2rem;
-    margin-block-start: 0;
-  }
-  header > section:nth-child(3) h3{
-    inset-block-start: 0;
-  }
-
-  /* ----------------------------------
-     2) Mobile stacking with headings attached to their language blocks
-     English heading ABOVE english text,
-     Urdu heading ABOVE urdu text
-  ---------------------------------- */
-
-  /* Make article a flex stack */
   article{
     display: flex;
     flex-direction: column;
   }
 
-  /* Flatten .two-col so its children participate in article ordering */
   .two-col{
     display: contents;
   }
 
-  /* Order: EN heading -> EN col -> UR heading -> UR col */
-  .hidden-power-structures-english{ order: 1; }
-  .col-en{ order: 2; width: 100%; }
+  .hidden-power-structures-english{ 
+    order: 1;
+    padding-block-end: 5rem;
+  }
+  .col-en{ 
+    order: 2; width: 100%; 
+  }
 
-  .hidden-power-structures-urdu{ order: 3; }
-  .col-ur{ order: 4; width: 100%; }
-
-  /* ----------------------------------
-     3) Sticky headings aligned like desktop:
-     English LEFT, Urdu RIGHT
-  ---------------------------------- */
-  .sticky-heading,
-  .sticky-heading-2{
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 0.75rem;
-    gap: 1rem;
+  .hidden-power-structures-urdu{ 
+    order: 3; 
+    padding-block-start: 10rem;
+  }
+  .col-ur{ 
+    order: 4; width: 100%; 
   }
 
   .sticky-heading .his-answers-english,
