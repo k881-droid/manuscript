@@ -16,7 +16,7 @@
   --white: rgb(255, 255, 255);
   --header-blue: rgb(46, 46, 241);
   --sticky-yellow: rgb(255, 255, 60);
-  --english-blue: rgb(33, 33, 195);
+  --english-blue: rgb(30, 30, 178);
   --accent-olive: rgb(166, 166, 38);
   --muted-gray: #d0d0d0;
   --transparent: transparent;
@@ -80,13 +80,13 @@ header > section:nth-child(3){
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-block-start: calc(var(--space) * -2.5);
+  margin-block-start: calc(var(--space)*-5)
 }
 
 header > section:nth-child(3) h3{
   margin: 0;
   position: relative;
-  inset-block-start: calc(var(--space) * -3.7);
+  inset-block-start: calc(var(--space) * -6);
 }
 
 .handjet{
@@ -256,17 +256,37 @@ strong{ font-weight: 500; }
 
   :root{ font-size: 80%; }
 
-  header > section:nth-child(2){
+    header > section:nth-child(2){
     padding: 0.75rem 1rem;
     max-block-size: 10rem;     
     overflow: auto;            
   }
 
-  header > section:nth-child(2) .handjet{
+    header > section:nth-child(2) .handjet{
     font-size: 1.5rem;
     line-height: 1.25;
     margin: 0;
   }
+
+    header > section:nth-child(3){
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--header-blue);
+  position: relative;
+  z-index: 100;
+  background-color: var(--transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: calc(var(--space) * -2.5);
+  }
+
+  header > section:nth-child(3) h3{
+  margin: 0;
+  position: relative;
+  inset-block-start: calc(var(--space) * -3.7);
+  }
+
 
   article{
     display: flex;
@@ -293,15 +313,33 @@ strong{ font-weight: 500; }
     order: 4; width: 100%; 
   }
 
-  .sticky-heading .his-answers-english,
-  .sticky-heading-2 .my-questions-english{
-    text-align: left;
+  .sticky-heading,
+  .sticky-heading-2{
+  flex-direction: row;
+  justify-content: space-between;
   }
 
-  .sticky-heading .his-answers-urdu,
-  .sticky-heading-2 .his-answers-urdu{
-    text-align: right;
-    direction: rtl;
+.sticky-heading .his-answers-english,
+.sticky-heading-2 .my-questions-english{
+  text-align: left;
+  margin: 0;
+  }
+
+.sticky-heading,
+.sticky-heading-2{
+  text-align: right;
+  direction: rtl;
+  margin: 0;
+  }
+
+  .his-answers-urdu{
+    font-size: 2.5rem;
+    color: var(--english-blue);
+  }
+
+  .his-answers-english, .my-questions-english{
+    color: white;
   }
 
 }
+
