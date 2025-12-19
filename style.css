@@ -7,7 +7,9 @@
 :root{
   font-size: 100%;
   font-family: "Inter", sans-serif;
+
   --space: 1rem;
+
   --text: rgb(30, 30, 30);
   --bg: rgb(244, 244, 135);
   --white: rgb(255, 255, 255);
@@ -17,26 +19,26 @@
   --accent-olive: rgb(166, 166, 38);
   --muted-gray: #d0d0d0;
   --transparent: transparent;
-  overflow-x: hidden
+
+  overflow-x: hidden;
 }
 
-body{ 
+body{
   font-weight: 200;
   color: var(--text);
   background-color: var(--bg);
 }
 
-h1, h2{ 
+h1, h2{
   text-align: center;
+  margin: 0;
 }
 
-/* Header sections */
 header > section:nth-child(1){
   line-height: 7em;
   background: var(--header-blue);
-  padding-block-start: calc(var(--space) * 4);
-  padding-block-end: calc(var(--space) * 4);
-  padding-inline-start: calc(var(--space) * 4);
+  padding-block: calc(var(--space) * 4);
+  padding-inline: calc(var(--space) * 4);
 }
 
 header > section:nth-child(2){
@@ -44,7 +46,7 @@ header > section:nth-child(2){
   background-color: var(--white);
 }
 
-/* Title styles */
+
 .inter-semibold{
   font-size: 5rem;
   font-weight: 500;
@@ -54,27 +56,19 @@ header > section:nth-child(2){
   z-index: 1;
 }
 
-.noto-nastaliq-urdu{
-  font-family: "Noto Nastaliq Urdu", serif; 
-  font-size: 6.5rem;
-  color: var(--header-blue);
-  -webkit-text-stroke: calc(var(--space) * 0.2) var(--white);
-  position: relative;
-  inset-block-start: 0em;
-  paint-order: stroke;
-}
-
+.noto-nastaliq-urdu,
 .noto-nastaliq-urdu-second-child{
-  font-family: "Noto Nastaliq Urdu", serif; 
+  font-family: "Noto Nastaliq Urdu", serif;
   font-size: 6.5rem;
   color: var(--header-blue);
   -webkit-text-stroke: calc(var(--space) * 0.2) var(--white);
   position: relative;
-  inset-block-end: 0.4em;
   paint-order: stroke;
 }
 
-/* “In Conversation…” section */
+.noto-nastaliq-urdu{ inset-block-start: 0; }
+.noto-nastaliq-urdu-second-child{ inset-block-end: 0.4em; }
+
 header > section:nth-child(3){
   font-size: 2rem;
   font-weight: 500;
@@ -87,9 +81,9 @@ header > section:nth-child(3){
 }
 
 header > section:nth-child(3) h3{
+  margin: 0;
   position: relative;
   inset-block-start: calc(var(--space) * -4.8);
-  margin: 0;
 }
 
 .handjet{
@@ -97,6 +91,7 @@ header > section:nth-child(3) h3{
   font-size: 1.5em;
   color: var(--muted-gray);
   text-align: center;
+  margin: 0;
 }
 
 em{ font-style: italic; }
@@ -104,9 +99,28 @@ em{ font-style: italic; }
 footer{
   font-size: small;
   background-color: var(--white);
+  padding: 1rem 4rem;
 }
 
-/* Sticky heading (His Answers) */
+/* ---------------- Sticky headings (NEW FLEX) ---------------- */
+.sticky-heading,
+.sticky-heading-2{
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 20;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.75rem calc(var(--space) * 4);
+  gap: 2rem;
+}
+
+.sticky-heading,
+.sticky-heading-2{
+  background-color: var(--header-blue);
+}
 
 .sticky-heading h3,
 .sticky-heading-2 h3{
@@ -114,54 +128,48 @@ footer{
   line-height: 1;
 }
 
-.sticky-heading,
-.sticky-heading-2{
-  position: sticky;
-  inset-block-start: 0;
-  z-index: 20;
-  background-color: var(--header-blue);
-}
-
-.sticky-heading .his-answers-urdu,
-.sticky-heading .his-answers-english{
-  margin: 0;
-  line-height: 1;
-}
-
 .his-answers-urdu{
-  font-family: "Noto Nastaliq Urdu", serif; 
+  font-family: "Noto Nastaliq Urdu", serif;
   font-size: 3.5em;
-  color: var(--sticky-yellow);
-  position: relative;
+  color: var(--sticky-yellow); 
   z-index: 2;
 }
 
-.his-answers-english{
+.his-answers-english,
+.my-questions-english{
   font-size: 3.5em;
   font-weight: 500;
   letter-spacing: -0.05em;
   color: var(--english-blue);
 }
 
-/* Articles */
+.sticky-heading .his-answers-urdu,
+.sticky-heading-2 .his-answers-urdu{
+  direction: rtl;
+  text-align: right;
+  margin-left: auto;
+}
+
+.my-questions-english{
+  position: static;
+  inset: auto;
+}
+
 article{
   padding-block-start: calc(var(--space) * 7);
-  padding-inline-start: calc(var(--space) * 4);
-  padding-inline-end: calc(var(--space) * 4);
+  padding-inline: calc(var(--space) * 4);
 }
 
 article:last-of-type{
   padding-block-end: calc(var(--space) * 7);
 }
 
-
 .hidden-power-structures-english{
   font-size: 3.5em;
   font-weight: 500;
   letter-spacing: -0.05em;
   color: var(--accent-olive);
-  position: relative;
-  margin-block-start:0;
+  margin: 0;
 }
 
 .hidden-power-structures-urdu{
@@ -175,12 +183,10 @@ article:last-of-type{
   inset-block-start: -1.2em;
 }
 
-/* Paragraph rules */
 article p{
   font-size: 1.5rem;
 }
 
-/* Two-column layout */
 .two-col{
   display: flex;
   gap: calc(var(--space) * 15);
@@ -188,9 +194,8 @@ article p{
   align-items: flex-start;
 }
 
-.col-en{
-  direction: ltr;
-}
+.col-en{ direction: ltr; }
+.col-ur{ direction: rtl; }
 
 .col-en p{
   line-height: 2.5rem;
@@ -202,45 +207,14 @@ article p{
   font-family: "Handjet", serif;
   font-size: 1.9rem;
   line-height: 2.5rem;
-  direction: rtl;
 }
 
 .two-col .col p{
-  margin-block-start: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  margin-block-end: calc(var(--space) * 7);
-}
-
-.two-col p{
-  margin-block-start: 0 !important;
-  margin-inline-start: 0 !important;
-  margin-inline-end: 0 !important;
+  margin: 0 0 calc(var(--space) * 7) 0;
 }
 
 .two-col .col p:last-child{
   margin-block-end: 0;
-}
-
-/* Sticky heading (My Questions) */
-
-.sticky-heading-2{
-  background-color: var(--header-blue);
-  position: sticky;
-  inset-block-start: 0;
-  z-index: 20;
-}
-
-.my-questions-english{
-  font-size: 3.5em;
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  color: var(--english-blue);
-  position: relative;
-  z-index: 1;
-  inset-inline-start: 16em;
-  inset-block-start: -2em;
-  margin: 0;
 }
 
 .my-response{
@@ -248,10 +222,7 @@ article p{
   background-color: var(--white);
   line-height: 1.5em;
 
-  padding-block-start: calc(var(--space) * 3);
-  padding-block-end: calc(var(--space) * 3);
-  padding-inline-start: calc(var(--space) * 3);
-  padding-inline-end: calc(var(--space) * 3);
+  padding: calc(var(--space) * 3);
 }
 
 strong{ font-weight: 500; }
@@ -259,4 +230,3 @@ strong{ font-weight: 500; }
 .my-response p{
   margin-block-start: calc(var(--space) * 3);
 }
-
