@@ -57,6 +57,8 @@
   box-shadow: 0 2px 0 rgba(0,0,0,0.15);
 }
 
+/* Learnt how to create hover button using this video + experimenting: https://www.youtube.com/watch?v=Pmo6y5b2Uec  */
+
 body{
   font-weight: 250;
   color: var(--text);
@@ -116,7 +118,9 @@ h1{
   inset-block-start: 0; 
   font-size: 3rem;
 }
-.noto-nastaliq-urdu-second-child{ inset-block-end: 0.4em; }
+.noto-nastaliq-urdu-second-child{ 
+  inset-block-end: 0.4em; 
+}
 
 .noto-nastaliq-urdu-second-child{
   display: none;
@@ -241,6 +245,8 @@ article:last-of-type{
   order: 1;
   padding-block-end: 5rem;
 }
+
+/* Had to find a way to reposition the columns for mobile (e.g. stacked), learnt it through this order property found on mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/order */
 
 .hidden-power-structures-urdu{
   font-family: "Rakkas", serif;
