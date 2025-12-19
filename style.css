@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&family=Varela+Round&display=swap');
@@ -249,3 +250,81 @@ strong{ font-weight: 500; }
 }
 
 
+@media (width < 580px) {
+
+  :root{ font-size: 80%; }
+
+  /* ----------------------------------
+     1) Make the WHITE Daniel Buzon section smaller
+     (shrink the section itself + make it scrollable)
+  ---------------------------------- */
+  header > section:nth-child(2){
+    padding: 0.75rem 1rem;
+    max-block-size: 10rem;     /* smaller white box height */
+    overflow: auto;            /* keeps text, but inside a smaller box */
+  }
+
+  header > section:nth-child(2) .handjet{
+    font-size: 1.05em;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  /* keep “In Conversation…” label tighter */
+  header > section:nth-child(3){
+    font-size: 1.2rem;
+    margin-block-start: 0;
+  }
+  header > section:nth-child(3) h3{
+    inset-block-start: 0;
+  }
+
+  /* ----------------------------------
+     2) Mobile stacking with headings attached to their language blocks
+     English heading ABOVE english text,
+     Urdu heading ABOVE urdu text
+  ---------------------------------- */
+
+  /* Make article a flex stack */
+  article{
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Flatten .two-col so its children participate in article ordering */
+  .two-col{
+    display: contents;
+  }
+
+  /* Order: EN heading -> EN col -> UR heading -> UR col */
+  .hidden-power-structures-english{ order: 1; }
+  .col-en{ order: 2; width: 100%; }
+
+  .hidden-power-structures-urdu{ order: 3; }
+  .col-ur{ order: 4; width: 100%; }
+
+  /* ----------------------------------
+     3) Sticky headings aligned like desktop:
+     English LEFT, Urdu RIGHT
+  ---------------------------------- */
+  .sticky-heading,
+  .sticky-heading-2{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 0.75rem;
+    gap: 1rem;
+  }
+
+  .sticky-heading .his-answers-english,
+  .sticky-heading-2 .my-questions-english{
+    text-align: left;
+  }
+
+  .sticky-heading .his-answers-urdu,
+  .sticky-heading-2 .his-answers-urdu{
+    text-align: right;
+    direction: rtl;
+  }
+
+}
