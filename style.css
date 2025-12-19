@@ -7,9 +7,7 @@
 :root{
   font-size: 100%;
   font-family: "Inter", sans-serif;
-
   --space: 1rem;
-
   --text: rgb(30, 30, 30);
   --bg: rgb(244, 244, 135);
   --white: rgb(255, 255, 255);
@@ -19,6 +17,7 @@
   --accent-olive: rgb(166, 166, 38);
   --muted-gray: #d0d0d0;
   --transparent: transparent;
+  overflow-x: hidden
 }
 
 body{ 
@@ -35,10 +34,10 @@ h1, h2{
 section:nth-child(1){
   line-height: 7em;
   background: var(--header-blue);
-  padding-block-start: calc(var(--space) * 4);
-  padding-block-end: calc(var(--space) * 4);
-  padding-inline-start: calc(var(--space) * 4);
-  padding-inline-end: calc(var(--space) * 4);
+  padding-block-start: calc(var(--space) * 2);
+  padding-block-end: calc(var(--space) * 2);
+  padding-inline-start: calc(var(--space) * 2);
+  padding-inline-end: calc(var(--space) * 2);
 }
 
 section:nth-child(2){
@@ -53,7 +52,7 @@ header > section:nth-child(1) h2{
 
 /* Title styles */
 .inter-semibold{
-  font-size: 6.5rem;
+  font-size: 5rem;
   font-weight: 500;
   letter-spacing: -0.05em;
   color: var(--white);
@@ -165,11 +164,15 @@ footer{
 
 /* Articles */
 article{
-  padding-block-start: calc(var(--space) * 4);
-  padding-block-end: calc(var(--space) * 4);
+  padding-block-start: calc(var(--space) * 7);
   padding-inline-start: calc(var(--space) * 4);
   padding-inline-end: calc(var(--space) * 4);
 }
+
+article:last-of-type{
+  padding-block-end: calc(var(--space) * 7);
+}
+
 
 .hidden-power-structures-english{
   font-size: 3.5em;
@@ -177,7 +180,7 @@ article{
   letter-spacing: -0.05em;
   color: var(--accent-olive);
   position: relative;
-  margin-block-end: 1rem;
+  margin-block-start:0;
 }
 
 .hidden-power-structures-urdu{
