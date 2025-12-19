@@ -295,7 +295,7 @@ strong{ font-weight: 500; }
   header > section:nth-child(2){
     padding: 0;
     max-block-size: none;
-    overflow: visible;
+    overflow: hidden;
   }
 
   header > section:nth-child(2) .handjet{
@@ -451,7 +451,7 @@ strong{ font-weight: 500; }
   }
 
   .hidden-power-structures-english{
-  max-inline-size: 12ch;
+    max-inline-size: 50vw;
   }
 
   .col-en p{
