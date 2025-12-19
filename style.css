@@ -376,5 +376,92 @@ strong{ font-weight: 500; }
   }
 }
 
+@media (width > 700px) {
+  :root{ font-size: 85%; 
+  }
 
+  header > section:nth-child(2){
+    padding: 1rem 2rem;
+    max-block-size: 14rem;
+  }
 
+  header > section:nth-child(2) .handjet{
+    font-size: 1.6rem;
+    line-height: 1.35;
+  }
+
+  .inter-semibold{
+    font-size: 4.2rem;
+  }
+
+  h1{
+    margin-block-start: -2.5rem;
+  }
+
+  .noto-nastaliq-urdu{
+    font-size: 4.5rem;
+  }
+
+  header > section:nth-child(3){
+    font-size: 2rem;
+    margin-block-start: calc(var(--space) * -3.5);
+  }
+
+  header > section:nth-child(3) h3{
+    inset-block-start: calc(var(--space) * -4.6);
+  }
+
+  .sticky-heading,
+  .sticky-heading-2{
+    padding-inline-start: calc(var(--space) * 3);
+    padding-inline-end: calc(var(--space) * 3);
+    padding-block-start: calc(var(--space) * 1.25);
+    padding-block-end: calc(var(--space) * 1.25);
+  }
+
+  .his-answers-english,
+  .my-questions-english{
+    font-size: 2.6rem;
+  }
+
+  .his-answers-urdu{
+    font-size: 2.6rem;
+  }
+
+  article{
+    display: block;
+    padding-inline: calc(var(--space) * 4);
+  }
+
+  .two-col{
+    display: flex;
+    gap: calc(var(--space) * 8);
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .hidden-power-structures-english,
+  .hidden-power-structures-urdu,
+  .col-en,
+  .col-ur{
+    order: 0;
+    padding-block-start: 0;
+    padding-block-end: 0;
+    width: auto;
+  }
+
+  .hidden-power-structures-english{
+  max-inline-size: 12ch;
+  }
+
+  .col-en p{
+    font-size: 1.45rem;
+    line-height: 2.4rem;
+  }
+
+  .col-ur p{
+    font-size: 1.75rem;
+    line-height: 2.4rem;
+  }
+}
+}
