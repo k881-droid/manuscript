@@ -31,23 +31,17 @@ h1, h2{
 }
 
 /* Header sections */
-section:nth-child(1){
+header > section:nth-child(1){
   line-height: 7em;
   background: var(--header-blue);
-  padding-block-start: calc(var(--space) * 2);
-  padding-block-end: calc(var(--space) * 2);
-  padding-inline-start: calc(var(--space) * 2);
-  padding-inline-end: calc(var(--space) * 2);
+  padding-block-start: calc(var(--space) * 4);
+  padding-block-end: calc(var(--space) * 4);
+  padding-inline-start: calc(var(--space) * 4);
 }
 
-section:nth-child(2){
+header > section:nth-child(2){
   position: relative;
   background-color: var(--white);
-}
-
-header > section:nth-child(1) h1,
-header > section:nth-child(1) h2{
-  margin: 0;
 }
 
 /* Title styles */
@@ -113,16 +107,19 @@ footer{
 }
 
 /* Sticky heading (His Answers) */
-.sticky-heading{
+
+.sticky-heading h3,
+.sticky-heading-2 h3{
+  margin: 0;
+  line-height: 1;
+}
+
+.sticky-heading,
+.sticky-heading-2{
   position: sticky;
   inset-block-start: 0;
   z-index: 20;
-  background-color: var(--sticky-yellow);
-
-  padding-block-start: calc(var(--space) * 0.6);
-  padding-block-end: calc(var(--space) * 0.6);
-  padding-inline-start: calc(var(--space) * 2);
-  padding-inline-end: calc(var(--space) * 2);
+  background-color: var(--header-blue);
 }
 
 .sticky-heading .his-answers-urdu,
@@ -144,22 +141,6 @@ footer{
   font-weight: 500;
   letter-spacing: -0.05em;
   color: var(--english-blue);
-  position: relative;
-  z-index: 1;
-  inset-inline-start: 14.2em;
-  inset-block-start: -2em;
-  margin: 0;
-}
-
-.sticky-heading .his-answers-english{
-  inset-inline-start: auto;
-  inset-inline-end: auto;
-  inset-block-start: auto;
-  inset-block-end: auto;
-  transform: none;
-
-  margin-block-start: -1em;
-  margin-inline-start: 14.5em;
 }
 
 /* Articles */
@@ -242,22 +223,12 @@ article p{
 }
 
 /* Sticky heading (My Questions) */
+
 .sticky-heading-2{
   background-color: var(--header-blue);
   position: sticky;
   inset-block-start: 0;
   z-index: 20;
-
-  padding-block-start: calc(var(--space) * 1);
-  padding-block-end: calc(var(--space) * 1);
-  padding-inline-start: calc(var(--space) * 1);
-  padding-inline-end: calc(var(--space) * 1);
-}
-
-#my-questions{
-  padding-block-start: calc(var(--space) * 1);
-  padding-block-end: calc(var(--space) * 1);
-  height: calc(var(--space) * 12);
 }
 
 .my-questions-english{
@@ -288,3 +259,4 @@ strong{ font-weight: 500; }
 .my-response p{
   margin-block-start: calc(var(--space) * 3);
 }
+
