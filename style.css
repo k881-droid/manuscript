@@ -273,11 +273,12 @@ strong{ font-weight: 500; }
 }
 
 @media (width > 1000px) {
-  :root{ font-size: 100%; }
+  :root{ font-size: 100%;
+  }
 
   .noto-nastaliq-urdu-second-child{
   display: block;
-}
+  }
 
 .noto-nastaliq-urdu,
 .noto-nastaliq-urdu-second-child{
@@ -286,11 +287,14 @@ strong{ font-weight: 500; }
   color: var(--header-blue);
   -webkit-text-stroke: calc(var(--space) * 0.2) var(--white);
   position: relative;
-  paint-order: stroke;
-}
+  paint-order: stroke;  
+  }
 
-.noto-nastaliq-urdu{ inset-block-start: 0; }
-.noto-nastaliq-urdu-second-child{ inset-block-end: 0.4em; }
+  .noto-nastaliq-urdu
+  { inset-block-start: 0; 
+  }
+  .noto-nastaliq-urdu-second-child{ inset-block-end: 0.4em;
+  }
 
   header > section:nth-child(2){
     padding: 0;
@@ -391,7 +395,7 @@ strong{ font-weight: 500; }
   }
 
   .inter-semibold{
-    font-size: 4.2rem;
+    font-size: 8rem;
   }
 
   h1{
@@ -399,6 +403,10 @@ strong{ font-weight: 500; }
   }
 
   .noto-nastaliq-urdu{
+    font-size: 4.5rem;
+  }
+
+    .noto-nastaliq-urdu-second-child{
     font-size: 4.5rem;
   }
 
@@ -463,5 +471,4 @@ strong{ font-weight: 500; }
     font-size: 1.75rem;
     line-height: 2.4rem;
   }
-}
 }
