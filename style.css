@@ -246,6 +246,7 @@ article:last-of-type{
   font-family: "Handjet", serif;
   font-size: 1.9rem;
   line-height: 2.5rem;
+   font-weight: 300;
 }
 
 .two-col .col p{
