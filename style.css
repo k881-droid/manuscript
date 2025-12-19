@@ -102,18 +102,18 @@ footer{
   padding: 1rem 4rem;
 }
 
-/* ---------------- Sticky headings (NEW FLEX) ---------------- */
 .sticky-heading,
 .sticky-heading-2{
   position: sticky;
   inset-block-start: 0;
   z-index: 20;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 0.75rem calc(var(--space) * 4);
+  padding-inline-start: calc(var(--space) * 4);
+  padding-inline-end: calc(var(--space) * 4);
+  padding-block-start: calc(var(--space)*1.5);
+  padding-block-end: calc(var(--space)*1.5);
   gap: 2rem;
 }
 
@@ -130,7 +130,7 @@ footer{
 
 .his-answers-urdu{
   font-family: "Noto Nastaliq Urdu", serif;
-  font-size: 3.5em;
+  font-size: 3em;
   color: var(--sticky-yellow); 
   z-index: 2;
 }
@@ -153,6 +153,23 @@ footer{
 .my-questions-english{
   position: static;
   inset: auto;
+}
+
+.sticky-heading,
+.sticky-heading-2{
+  flex-direction: row-reverse;
+}
+
+/* Align text correctly per language */
+.sticky-heading .his-answers-urdu,
+.sticky-heading-2 .his-answers-urdu{
+  text-align: left;
+  direction: rtl;
+}
+
+.sticky-heading .his-answers-english,
+.sticky-heading-2 .my-questions-english{
+  text-align: right;
 }
 
 article{
@@ -230,3 +247,5 @@ strong{ font-weight: 500; }
 .my-response p{
   margin-block-start: calc(var(--space) * 3);
 }
+
+
