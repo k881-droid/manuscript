@@ -23,6 +23,40 @@
   overflow-x: hidden;
 }
 
+.external-link-footer{
+  text-align: center;
+  padding: calc(var(--space) * 2);
+  background-color: white;
+}
+
+.external-link-footer a{
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  background-color: var(--header-blue);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: 
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.external-link-footer a:hover,
+.external-link-footer a:focus-visible{
+  background-color: var(--english-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+}
+
+.external-link-footer a:active{
+  transform: translateY(0);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+}
+
 body{
   font-weight: 250;
   color: var(--text);
